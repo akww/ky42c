@@ -14,7 +14,7 @@
 # common driver code for CMDQ
 
 ifeq ($(CONFIG_MACH_MT6761),y)
-MTK_PLATFORM := mt6765
+MTK_PLATFORM := "mt6765"
 else
 MTK_PLATFORM := $(CONFIG_MTK_PLATFORM)
 endif

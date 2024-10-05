@@ -30,7 +30,7 @@ static int regulator_inited;
 
 #ifdef KCDISP_CUST
 #define PANEL_NOT_FOUND		-1
-extern int kdisp_lcm_get_panel_detect(void);
+extern int kc_lcm_get_panel_detect(void);
 #endif /* KCDISP_CUST */
 
 int display_bias_regulator_init(void)
@@ -66,12 +66,12 @@ int display_bias_enable(void)
 	int ret = 0;
 	int retval = 0;
 
-#ifdef KCDISP_CUST
-	if (kdisp_lcm_get_panel_detect() == PANEL_NOT_FOUND) {
-		pr_err("[KCDISP]%s skip for panel not detect\n",__func__);
-		return 0;
-	}
-#endif /* KCDISP_CUST */
+//#ifdef KCDISP_CUST
+//	if(kc_lcm_get_panel_detect() == PANEL_NOT_FOUND){
+//		pr_err("[KCDISP]%s skip for panel not detect\n",__func__);
+//		return 0;
+//	}
+//#endif // KCDISP_CUST 
 
 	display_bias_regulator_init();
 
@@ -120,12 +120,13 @@ int display_bias_disable(void)
 	int ret = 0;
 	int retval = 0;
 
-#ifdef KCDISP_CUST
-	if (kdisp_lcm_get_panel_detect() == PANEL_NOT_FOUND) {
-		pr_err("[KCDISP]%s skip for panel not detect\n",__func__);
-		return 0;
-	}
-#endif /* KCDISP_CUST */
+// idk where this is defined, or which one it is.
+//#ifdef KCDISP_CUST
+//	if (kc_lcm_get_panel_detect() == PANEL_NOT_FOUND) {
+//		pr_err("[KCDISP]%s skip for panel not detect\n",__func__);
+//		return 0;
+//	}
+//#endif // KCDISP_CUST 
 
 	display_bias_regulator_init();
 

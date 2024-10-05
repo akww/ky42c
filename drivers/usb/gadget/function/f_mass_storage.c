@@ -3887,8 +3887,8 @@ EXPORT_SYMBOL_GPL(set_vendor_sdev);
 
 int set_vendor_cmd_1(const char *buf, struct fsg_common *common)
 {
-	if(common->vendor_data == NULL)
-		return -EINVAL;
+//	if(common->vendor_data == NULL)
+//		return -EINVAL;
 
 	return sscanf(buf, "%2x%16s", (unsigned int*)&common->vendor_data,
 		&common->vendor_data[1]);
@@ -3896,8 +3896,8 @@ int set_vendor_cmd_1(const char *buf, struct fsg_common *common)
 
 int set_vendor_cmd_2(const char *buf, struct fsg_common *common)
 {
-	if(common->vendor_data == NULL)
-		return -EINVAL;
+//	if(common->vendor_data == NULL)
+//		return -EINVAL;
 
 	return sscanf(buf, "%2x%16s", (unsigned int*)&common->vendor_data2,
 		&common->vendor_data2[1]);

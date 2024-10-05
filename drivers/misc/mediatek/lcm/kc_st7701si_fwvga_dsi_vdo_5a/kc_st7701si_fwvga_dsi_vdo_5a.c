@@ -511,11 +511,6 @@ static int kc_lcm_get_panel_detect(void)
 	return kcdisp_data.panel_detect_status;
 }
 
-//int kdisp_lcm_get_panel_detect(void)
-//{
-//	return kc_lcm_get_panel_detect();
-//}
-
 static unsigned int lcm_check_refresh_disable(void)
 {
 	return kcdisp_data.refresh_disable;

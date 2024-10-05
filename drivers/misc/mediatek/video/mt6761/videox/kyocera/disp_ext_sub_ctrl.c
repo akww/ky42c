@@ -116,8 +116,8 @@ int disp_ext_sub_pan_display_ctrl (
 	pr_debug("%s start\n",__func__);
 
 	if( (!var) || (!info) ){
-		pr_err("%s end - bad parm var[%x] info[%x]\n",
-				__func__,(unsigned int)var, (unsigned int)info);
+		pr_err("%s end - bad parm var[0x%p] info[0x%p]\n",
+				__func__, var, info);
 		return -ENODEV;
 	}
 
@@ -153,8 +153,8 @@ static uint8_t* disp_ext_sub_get_img(
 	pr_debug("%s start\n",__func__);
 
 	if( (!var) || (!info) ){
-		pr_err("%s end - bad parm var[%x] info[%x]\n",
-				__func__,(unsigned int)var, (unsigned int)info);
+		pr_err("%s end - bad parm var[0x%p] info[0x%p]\n",
+				__func__, var, info);
 		return NULL;
 	}
 

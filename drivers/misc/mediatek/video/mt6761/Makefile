@@ -19,3 +19,4 @@
 
 obj-$(CONFIG_MTK_FB) += dispsys/
 obj-$(CONFIG_MTK_FB) += videox/
+

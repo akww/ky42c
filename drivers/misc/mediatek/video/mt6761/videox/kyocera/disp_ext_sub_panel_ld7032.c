@@ -269,7 +269,7 @@ static int ld7032_disp_ext_sub_panel_set_status(
 	pr_debug("%s start\n",__func__);
 
 	if(!pdata){
-		pr_err("%s end - null pdata[%x]\n",__func__,(int)pdata);
+		pr_err("%s end - null pdata[0x%p]\n",__func__, pdata);
 		return -ENODEV;
 	}
 
@@ -387,8 +387,8 @@ static int ld7032_disp_ext_sub_panel_update(
 	pr_debug("%s start\n",__func__);
 
 	if( (!var) || (!info) || (!apps_img_p) ){
-		pr_err("%s end - bad parm: var[%x] info[%x] img[%x]\n",
-				__func__,(int)var,(int)info,(int)apps_img_p);
+		pr_err("%s end - bad parm: var[0x%p] info[0x%p] img[0x%p]\n",
+				__func__,var,info,apps_img_p);
 		return -ENODEV;
 	}
 
@@ -484,8 +484,8 @@ static int disp_ext_sub_send_img(
 	pr_debug("%s start\n",__func__);
 
 	if( (!pdata) || (!img_p) ){
-		pr_err("%s end - bad parm: pdata[%x] img[%x]\n",
-				__func__,(int)pdata,(int)img_p);
+		pr_err("%s end - bad parm: pdata[0x%p] img[0x%p]\n",
+				__func__, pdata, img_p);
 		return -ENODEV;
 	}
 
@@ -511,7 +511,7 @@ static int disp_ext_sub_exe_seq(
 	pr_debug("%s start\n",__func__);
 
 	if(!sub_cmds_p){
-		pr_err("%s end - null cmd data[%x]\n",__func__,(int)sub_cmds_p);
+		pr_err("%s end - null cmd data[0x%p]\n",__func__, sub_cmds_p);
 		return -ENODEV;
 	}
 
@@ -560,8 +560,8 @@ static int disp_ext_sub_set_img_data(
 	pr_debug("%s start\n",__func__);
 
 	if( (!pdata) || (!img_p) ){
-		pr_err("%s end - bad parm: pdata[%x] img[%x]\n",
-				__func__,(int)pdata,(int)img_p);
+		pr_err("%s end - bad parm: pdata[0x%p] img[0x%p]\n",
+				__func__, pdata, img_p);
 		return -ENODEV;
 	}
 
@@ -590,8 +590,8 @@ static int ld7032_disp_ext_sub_set_cmd(
 	pr_debug("%s start\n",__func__);
 
 	if( (!payload_p) || (!pdata) ){
-		pr_err("%s end - null payload[%x] pdata[%d]\n",
-				__func__,(int)payload_p,(int)pdata);
+		pr_err("%s end - null payload[0x%p] pdata[0x%p]\n",
+				__func__, payload_p, pdata);
 		return -ENODEV;
 	}
 	if(!payload_len){
@@ -616,7 +616,7 @@ static int disp_ext_sub_set_wait( void * payload_p, unsigned char payload_len )
 	pr_debug("%s start\n",__func__);
 
 	if( !payload_p ){
-		pr_err("%s end - null payload[%x]\n",__func__,(int)payload_p );
+		pr_err("%s end - null payload[0x%p]\n", __func__, payload_p);
 		return -ENODEV;
 	}
 	if(!payload_len){
@@ -653,12 +653,12 @@ static int disp_ext_sub_set_sig(
 	pr_debug("%s start\n",__func__);
 
 	if( (!payload_p) || (!pdata) ){
-		pr_err("%s end - null payload[%x] pdata[%d]\n",
-				__func__,(int)payload_p,(int)pdata);
+		pr_err("%s end - null payload[0x%p] pdata[0x%p]\n",
+				__func__, payload_p, pdata);
 		return -ENODEV;
 	}
 	if(DISP_EXT_SUB_SIG_P_LEN != payload_len){
-		pr_err("%s end - bad length :payload_len[%x]\n",__func__,(int)payload_len);
+		pr_err("%s end - bad length :payload_len[%hhx]\n", __func__, payload_len);
 		return -ENODEV;
 	}
 
@@ -722,7 +722,7 @@ static int ld7032_disp_ext_sub_panel_bus_init( struct disp_ext_sub_pdata *pdata 
 	pr_debug("%s start\n",__func__);
 
 	if(!pdata){
-		pr_err("%s end - null pdata[%x]\n",__func__,(int)pdata);
+		pr_err("%s end - null pdata[0x%p]\n",__func__, pdata);
 		return -ENODEV;
 	}
 
@@ -738,7 +738,7 @@ static int ld7032_disp_ext_sub_panel_signal_init( struct disp_ext_sub_pdata *pda
 	pr_debug("%s start\n",__func__);
 
 	if(!pdata){
-		pr_err("%s end - null pdata[%x]\n",__func__,(int)pdata);
+		pr_err("%s end - null pdata[0x%p]\n", __func__, pdata);
 		return -ENODEV;
 	}
 
@@ -780,7 +780,7 @@ static int ld7032_disp_ext_sub_get_panel_dt(
 	pr_debug("%s start\n",__func__);
 
 	if( (!np) | (!pdata) ) {
-		pr_err("%s end - null np[%x] pdata[%x]\n",__func__,(int)np,(int)pdata);
+		pr_err("%s end - null np[0x%p] pdata[0x%p]\n",__func__, np, pdata);
 		return -ENODEV;
 	}
 
@@ -818,7 +818,7 @@ static int ld7032_disp_ext_sub_get_signal_dt(
 	pr_debug("%s start\n",__func__);
 
 	if( (!np) | (!pdata) ) {
-		pr_err("%s end - null np[%x] pdata[%x]\n",__func__,(int)np,(int)pdata);
+		pr_err("%s end - null np[0x%p] pdata[0x%p]\n",__func__, np, pdata);
 		return -ENODEV;
 	}
 
@@ -840,7 +840,7 @@ static int ld7032_disp_ext_sub_get_seq_dt(
 	pr_debug("%s start\n",__func__);
 
 	if( (!np) | (!pdata) ) {
-		pr_err("%s end - null np[%x] pdata[%x]\n",__func__,(int)np,(int)pdata);
+		pr_err("%s end - null np[0x%p] pdata[0x%p]\n",__func__, np, pdata);
 		return -ENODEV;
 	}
 
@@ -905,8 +905,8 @@ static int disp_ext_sub_get_cmd_dt(
 	pr_debug("%s start\n",__func__);
 
 	dt_data_p = of_get_property(np, cmd_key, &dt_data_len);
-	pr_debug("%s cmd_key[%s] dt_data_p[%x] dt_data_len[%d]\n",
-							 __func__,cmd_key ? cmd_key : "(null)", (int)dt_data_p,(int)dt_data_len);
+	pr_debug("%s cmd_key[%s] dt_data_p[0x%p] dt_data_len[%d]\n",
+		__func__,cmd_key ? cmd_key : "(null)", dt_data_p, dt_data_len);
 	if (!dt_data_p) {
 		pr_err("%s end - fail key=%s\n",__func__,cmd_key);
 		return -ENOMEM;

@@ -28,7 +28,6 @@ else #DTBO is not enabled, there is only one dtb
 PROJ_DT_NAMES := $(MAIN_DT_NAMES)
 endif #CONFIG_MTK_DTBO_FEATURE
 
-
 MAIN_DTB_NAMES := $(addsuffix .dtb,$(MAIN_DT_NAMES))
 PROJ_DTB_NAMES := $(addsuffix .dtb,$(PROJ_DT_NAMES))
 MAIN_DTB_FILES := $(addprefix $(objtree)/arch/$(SRCARCH)/boot/dts/, $(MAIN_DTB_NAMES))

@@ -51,7 +51,7 @@
 #define IRQ_CLEAR 0
 
 int gpio_of_irq = -1;
-int irq_flag = -1;
+static int irq_flag = -1;
 
 struct stk3338_pm_private_data {
 	struct cdev cdev;
@@ -91,7 +91,7 @@ static ssize_t irq_flag_show(struct device *dev,struct device_attribute *attr,ch
 
 static ssize_t irq_flag_store(struct device *dev,struct device_attribute *attr,const char *buf, size_t count)
 {
-       sscanf(buf, "%x", &irq_flag );
+       sscanf(buf, "%x", &irq_flag);
        dev_info(dev, "%s store value = %d \n", __func__,irq_flag);
 
 	return count;

@@ -85,7 +85,7 @@ int als_flush_report(void)
 	return err;
 }
 
-int rgbw_data_report(int *value)
+int rgbw_data_report(int value[4])
 {
 	int err = 0;
 	struct alsps_context *cxt = alsps_context_obj;

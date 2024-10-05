@@ -1702,13 +1702,13 @@ static int lv5216_probe(struct i2c_client *client,
 		LV5216_V_LOG("read label");
 		err = of_property_read_string(temp, "label", &led_label);
 		if (err < 0) {
-			LV5216_E_LOG("Failure reading label, Dev=[0x%08x] err=[%d]", (unsigned int)&client->dev, err);
+			LV5216_E_LOG("Failure reading label, Dev=[0x%p] err=[%d]", &client->dev, err);
 			continue;
 		}
 		LV5216_V_LOG("read linux,name");
 		err = of_property_read_string(temp, "linux,name", &linux_name);
 		if (err < 0) {
-			LV5216_E_LOG("Failure reading linux,name, Dev=[0x%08x] err=[%d]", (unsigned int)&client->dev, err);
+			LV5216_E_LOG("Failure reading linux,name, Dev=[0x%p] err=[%d]", &client->dev, err);
 			continue;
 		}
 

@@ -540,8 +540,7 @@ static int mmdvfs_apply_clk_hw_config(
 		mmdvfs_step = mmdvfs_step_request;
 
 	/* Check if the step is legall */
-	if (mmdvfs_step < 0 || mmdvfs_step >= self->step_num
-	|| (self->step_profile_mappings + mmdvfs_step) == NULL)
+	if (mmdvfs_step < 0 || mmdvfs_step >= self->step_num)
 		return -1;
 
 	/* Get hw configurtion fot the step */

@@ -478,16 +478,8 @@ static const char *get_provider_name(struct device_node *node, u32 *cells)
 	if (of_property_read_string(node, "compatible", &name))
 		name = node->name;
 
-	p = strchr(name, '-');
-
-	if (p)
-		return p + 1;
-
-	p = strchr(name, ',');
-
-	if (p)
-		return p + 1;
-
+	if((p = strchr(name, '-')) || (p = strchr(name, ',')))
+		return p+1;
 	return name;
 }
 

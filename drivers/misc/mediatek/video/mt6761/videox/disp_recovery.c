@@ -458,10 +458,8 @@ int do_lcm_vdo_lp_read(struct dsi_cmd_desc *cmd_tab, unsigned int count)
 	if (primary_get_state() == DISP_SLEPT) {
 		DISPERR("primary display path is slept?? -- skip read\n");
 
-		for (i = 0; i < count; i++) {
-			if ((cmd_tab + i) != NULL)
-				cmd_tab[i].dlen = 0;
-		}
+		for (i = 0; i < count; i++)
+			cmd_tab[i].dlen = 0;
 
 		primary_display_manual_unlock();
 		return -1;
@@ -471,10 +469,8 @@ int do_lcm_vdo_lp_read(struct dsi_cmd_desc *cmd_tab, unsigned int count)
 
 		DISPERR("Not support cmd mode\n");
 
-		for (i = 0; i < count; i++) {
-			if ((cmd_tab + i) != NULL)
-				cmd_tab[i].dlen = 0;
-		}
+		for (i = 0; i < count; i++)
+			cmd_tab[i].dlen = 0;
 
 		primary_display_manual_unlock();
 		return -1;
@@ -539,10 +535,8 @@ int do_lcm_vdo_lp_read(struct dsi_cmd_desc *cmd_tab, unsigned int count)
 		dpmgr_path_build_cmdq(primary_get_dpmgr_handle(), handle,
 			 CMDQ_DSI_RESET, 0);
 
-		for (i = 0; i < count; i++) {
-			if ((cmd_tab + i) != NULL)
-				cmd_tab[i].dlen = 0;
-		}
+		for (i = 0; i < count; i++)
+			cmd_tab[i].dlen = 0;
 		goto DISPTORY;
 	}
 

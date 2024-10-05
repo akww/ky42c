@@ -24,6 +24,7 @@ ccflags-$(CONFIG_MACH_MT6779) += -I$(srctree)/drivers/misc/mediatek/emi/$(MTK_PL
 ccflags-$(CONFIG_MACH_MT6779) += -I$(srctree)/drivers/misc/mediatek/sspm/
 ccflags-$(CONFIG_MACH_MT6779) += -I$(srctree)/drivers/misc/mediatek/sspm/$(MTK_PLATFORM)/
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/emi_bwl/$(MTK_PLATFORM)/
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/smi/
 
 
 BUILD_ALL_FILES := true

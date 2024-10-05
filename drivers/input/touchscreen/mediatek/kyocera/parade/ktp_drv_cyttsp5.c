@@ -297,7 +297,7 @@ static ssize_t ktp_drv_event_ctrl_show(struct device *dev,
 	pr_err("%s: START\n", __func__);
 	pr_err("%s: END\n", __func__);
 
-	return sprintf(buf, "%d\n", ret);
+	return sprintf(buf, "%zu\n", ret);
 }
 
 static ssize_t ktp_drv_event_ctrl_store(struct device *dev,
@@ -316,7 +316,7 @@ static ssize_t ktp_drv_glove_mode_show(struct device *dev,
 	pr_err("%s: START\n", __func__);
 	pr_err("%s: END\n", __func__);
 
-	return sprintf(buf, "%d\n", ret);
+	return sprintf(buf, "%zu\n", ret);
 }
 
 static ssize_t ktp_drv_glove_mode_store(struct device *dev,
@@ -335,7 +335,7 @@ static ssize_t ktp_drv_touch_mode_show(struct device *dev,
 	pr_err("%s: START\n", __func__);
 	pr_err("%s: END\n", __func__);
 
-	return sprintf(buf, "%d\n", ret);
+	return sprintf(buf, "%zu\n", ret);
 }
 
 static ssize_t ktp_drv_touch_mode_store(struct device *dev,
@@ -354,7 +354,7 @@ static ssize_t ktp_drv_easywake_mode_show(struct device *dev,
 	pr_err("%s: START\n", __func__);
 	pr_err("%s: END\n", __func__);
 
-	return sprintf(buf, "%d\n", ret);
+	return sprintf(buf, "%zu\n", ret);
 }
 
 static ssize_t ktp_drv_easywake_mode_store(struct device *dev,

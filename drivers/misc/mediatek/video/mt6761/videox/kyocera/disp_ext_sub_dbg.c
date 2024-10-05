@@ -115,8 +115,8 @@ static void disp_ext_sub_seq_data_dump( struct disp_ext_sub_cmds* cmd_p )
 	if( cmd_p ) {
 		cmd_detail_p = cmd_p->cmd_p;
 
-		pr_debug("buf_p:[%x],blen:[%d],cmd_cnt:[%d]\n",
-				(int)cmd_p->buf_p,(int)cmd_p->blen,(int)cmd_p->cmd_cnt );
+		pr_debug("buf_p:[0x%p],blen:[%d],cmd_cnt:[%d]\n",
+				cmd_p->buf_p,(int)cmd_p->blen,(int)cmd_p->cmd_cnt );
 
 		for( i=0; i<cmd_p->cmd_cnt; i++) {
 			pr_debug("ctrl_kind:[%d],payload_len:[%d] :: ",

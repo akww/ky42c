@@ -1506,10 +1506,9 @@ static void cldma_queue_switch_ring(struct md_cd_queue *queue)
 			else if ((1 << queue->index) & NORMAL_TX_QUEUE_MASK)
 				queue->tr_ring =
 					&md_ctrl->normal_tx_ring[normal_tx_queue2ring[queue->index]];
-		} else {
+		} else if(NORMAL_RXQ_NUM > 0)
 			queue->tr_ring =
 				&md_ctrl->normal_tx_ring[normal_tx_queue2ring[queue->index]];
-		}
 
 		req = list_first_entry(&queue->tr_ring->gpd_ring,
 				struct cldma_request, entry);
@@ -1526,10 +1525,9 @@ static void cldma_queue_switch_ring(struct md_cd_queue *queue)
 			else if ((1 << queue->index) & NORMAL_RX_QUEUE_MASK)
 				queue->tr_ring =
 					&md_ctrl->normal_rx_ring[normal_rx_queue2ring[queue->index]];
-		} else {
+		} else if(NORMAL_RXQ_NUM > 0)
 			queue->tr_ring =
 				&md_ctrl->normal_rx_ring[normal_rx_queue2ring[queue->index]];
-		}
 
 		req = list_first_entry(&queue->tr_ring->gpd_ring,
 				struct cldma_request, entry);

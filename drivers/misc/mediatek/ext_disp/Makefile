@@ -11,16 +11,16 @@
 # GNU General Public License for more details.
 #
 
-PLATFORM := $(subst ",,$(CONFIG_MTK_PLATFORM))
+MTK_PLATFORM := $(subst ",,$(CONFIG_MTK_PLATFORM))
 
 # mt6761 and mt6765 co-folder
-ifeq ($(PLATFORM),mt6761)
-PLATFORM := mt6765
+ifeq ($(MTK_PLATFORM),mt6761)
+MTK_PLATFORM := mt6765
 endif
 
 ifeq ($(CONFIG_SINGLE_PANEL_OUTPUT),y)
-else ifneq ($(wildcard $(srctree)/drivers/misc/mediatek/ext_disp/$(PLATFORM)/),)
-obj-y += $(PLATFORM)/
+else ifneq ($(wildcard $(srctree)/drivers/misc/mediatek/ext_disp/$(MTK_PLATFORM)/),)
+obj-y += $(MTK_PLATFORM)/
 obj-y += common/
 else
 obj-y += dummy/

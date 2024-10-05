@@ -634,11 +634,13 @@ int udc_kick_handler(struct port_t *port, struct z_stream_s *zcpr,
 			"ins%d total_cmp_size:%d,deflateBound:%d,rsvd_len:%d\n",
 			inst_id, total_comp_size[inst_id],
 			max_output_size, rsvd_len);
-		if (inst_id == 0)
+		if (inst_id == 0){
+			total_comp_size[0] = 0;
 			*comp_data = comp_data_buf_base;
-		else if (inst_id == 1)
+		}else if (inst_id == 1){
+			total_comp_size[1] = 0;
 			*comp_data = comp_data_buf_base + max_packet_size;
-		total_comp_size[inst_id] = 0;
+		}
 	}
 	/* cal md_read_len for check if cmp_buf is full or not */
 	ret = check_cmp_buf(inst_id, max_output_size);

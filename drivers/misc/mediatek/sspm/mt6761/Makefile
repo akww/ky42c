@@ -1,6 +1,7 @@
 obj-y += sspm_platform-y
 
-subdir-ccflags-y += -I$(srctree)/drivers/misc/mediatek/sspm
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/sspm
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/sspm/$(CONFIG_MTK_PLATFORM)
 
 sspm_platform-y += ../sspm_mbox.o ../sspm_ipi_mbox.o ../sspm_logger_impl.o sspm_emi_mpu.o sspm_ipi_timeout_cb.o
 

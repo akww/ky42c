@@ -22,5 +22,13 @@ ccflags-y += -I$(srctree)/drivers/misc/mediatek/mmp/
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/smi/
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/m4u/2.0
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/m4u/$(MTK_PLATFORM)
+
+# Remove this and see the error, I think
+# they are using negative indices on purpose.
+# Not sure how the compiler knows these values
+# ahead of time without further looking.
+ccflags-y += -Wno-error=array-bounds 
+
 
 obj-$(CONFIG_MTK_M4U) += m4u_hw.o
